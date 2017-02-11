@@ -17,8 +17,6 @@ $( function(){
                         logg("RADIO");
                         $('p.guzik').css({ 'color': 'inherit' });
                         $(this).css({ 'color': 'red' });
-                     });
-   
-   
+                     });   
 
 });
