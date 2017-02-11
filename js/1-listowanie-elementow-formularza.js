@@ -1,10 +1,5 @@
 'use strict';
-/*
 
-$(function() {
-   });
-
-*/
 
 function przeszukaj() {
    
@@ -12,13 +7,14 @@ function przeszukaj() {
       
    all.forEach(function(element) {
       if(element.name == 'imie') console.log(element.value);
-      if(element.name == 'nazwisko') console.log(element.value);      
+      if(element.name == 'nazwisko') console.log(element.value);           
    });
 }
+
 
 document.getElementsByName("wyslij")[0].addEventListener('click',  function(e){
    e.preventDefault();
    przeszukaj();
-   console.log('  >> przeszukiwanie : 100%')
+   console.log('  >> przeszukiwanie zakonczone ')
 } );
 
