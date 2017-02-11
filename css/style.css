@@ -10,3 +10,8 @@ a{color: yellow;}
 
 p{background-color: none;content: "";}
 
+.paragrafnext {
+   color: #f00;
+   background-color: #000;
+}
+
