@@ -8,3 +8,18 @@ html {
 
 a{color: yellow;}
 
+input {
+   margin:10px;
+}
+
+input[type="text"] {
+   display: block;
+   box-sizing: border-box;
+   width: 300px;
+}
+input[type="submit"] {
+   width: 300px;
+}
+
+
+
