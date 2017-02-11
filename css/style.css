@@ -1,10 +1,12 @@
 html {	
 	font-family: Arial;
 	font-family: Lato;
-    background-color: #303030;
+    background-color: #fff;
 	font-size: 16px;
-	color: #fff;
+	color: #303030;
 }
 
 a{color: yellow;}
+
+p{background-color: none;content: "";}
 
