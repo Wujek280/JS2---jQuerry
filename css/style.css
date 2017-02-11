@@ -1,21 +1,10 @@
 html {	
 	font-family: Arial;
 	font-family: Lato;
-    background-color: #fff;
+    background-color: #303030;
 	font-size: 16px;
-	color: #303030;
+	color: #fff;
 }
 
-a{color: green;}
-
-p{background-color: none;content: "";}
-
-.paragrafnext {
-   color: #f00;
-   background-color: #000;
-}
-
-.guzik{
-   font-weight: bold;
-}
+a{color: yellow;}
 
