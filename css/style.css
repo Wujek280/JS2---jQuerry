@@ -6,12 +6,16 @@ html {
 	color: #303030;
 }
 
-a{color: yellow;}
+a{color: green;}
 
 p{background-color: none;content: "";}
 
 .paragrafnext {
    color: #f00;
    background-color: #000;
+}
+
+.guzik{
+   font-weight: bold;
 }
 
