@@ -37,20 +37,22 @@ function oblicz() {
  }
 
 function obliczZysk(wplata, iloscLat, okresKapitalizacji, oprocentowanie, podatek) {
-   var Ko = parseFloat(wplata);                      // kapital poczatkowy
-   var n = iloscLat*okresKapitalizacji; // okresow kapit.
-   var base = (1+oprocentowanie);      //  podstawa potegi
-   var exp = Math.pow(base, n);
-   var ans = Ko*exp;
    
-   if(podatek == true) { 
-         var answer = (ans-wplata)*0.81;
-         answer += Ko;
-         return answer.toFixed(2);
-      }else{
-         return ans.toFixed(2);
-      }  
+   var oprocentowanieOpodatkowane = oprocentowanie;
+   if(podatek == true) {oprocentowanieOpodatkowane *= (1-.19);}
+   
+   var Ko = parseFloat(wplata); 
+   var n = iloscLat*okresKapitalizacji;
+   var base = (1+oprocentowanieOpodatkowane/okresKapitalizacji);
+   var exp = Math.pow(base, n);
+   var kapital = Ko*exp;
+   
+   kapital=kapital.toFixed(2);
+   return kapital;
+      
 }
+
+
 
 
 
@@ -61,3 +63,13 @@ document.getElementById("przelicz").addEventListener('click', function(e){
 } );
 
 //document.getElementById('wynik').innerHTML
+   
+   /*
+    if(podatek == true) { 
+         var answer = (ans-wplata)*0.81;
+         answer += Ko;
+         return answer.toFixed(2);
+      }else{
+         return ans.toFixed(2);
+   
+      }*/
