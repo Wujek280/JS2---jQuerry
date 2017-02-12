@@ -12,20 +12,22 @@
 <body>
 <hr>
 <form action="" id="formularz">
-   <label for="wplata">Wpłata w PLN<input name = "wplata" id="hajs" type="number"  value="0" min="0"></label>
+   <label for="wplata">Wpłata w PLN<input name = "wplata" id="hajs" type="number" placeholder="0" value="5000" min="0"></label>
    <label for="lista">Wybierz sposób :<br> 
       <select id="kapitalizacja" name="lista" >
+        <!-- kapitalizacji na rok np. miesieczna > 12x -->
          <option value="12">Miesięczna</option>
          <option value="4">Kwartalna</option>
          <option value="1">Roczna</option>
       </select></label><br>
-   <label for="">Ilość lat : <input id="lat" type="number" name="lat" value="1" min="1"></label>
-   <label for="">Oprocentowanie : <input type="number" id="proc" value="0" min="0"></label>
+   <label for="lat">Ilość lat : <input id="lat" type="number" name="lat" value="1" min="1"></label>
+   <label for="procenty">Oprocentowanie : <input name="procenty" type="number" id="proc" value="1" min="0"></label>
    <label for="">"Uwzględnij podatek belki 19%"<input id="tax" type="checkbox" value="false" ></label>
    <input type="button" value="Oblicz" id="przelicz">
 </form>
 <hr>
-<p id="wynik">Podatek : </p>
+<p id="wynik1">Kapitał końcowy : <span></span> </p>
+<!--<p id="wynik2">Odsetki : <span></span> </p>-->
 <hr>
 
     <script src="js/2-kallukator-odsetek.js"></script>

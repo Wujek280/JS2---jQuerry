@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 function oblicz() {
    console.log("słowo testowe na d.");
    
@@ -11,7 +9,7 @@ function oblicz() {
    
    var okresKapitalizacji =document.getElementById("kapitalizacja");
    okresKapitalizacji = okresKapitalizacji.value;
-   console.log(okresKapitalizacji,' mc/kapitalizacja ');
+   console.log(okresKapitalizacji,' kapitalizacji/rok ');
    
    var iloscLat = document.getElementById("lat");
    iloscLat = iloscLat.value;
@@ -22,30 +20,42 @@ function oblicz() {
    console.log(oprocentowanie*100,' %');
    
    var podatek = document.getElementById("tax");
-   podatek = podatek.value;
-   console.log(podatek,' PLN tax');
+   podatek = podatek.checked;
+   console.log(podatek,'[podatek belki]');
 
-   var wynik = obliczZysk(wplata, iloscLat, okresKapitalizacji, oprocentowanie, oprocentowanie, podatek) ;
+   var wynik = obliczZysk(wplata, iloscLat, okresKapitalizacji, oprocentowanie, podatek);
    
-   console.log("---wynik---")
-   console.log(' ',wynik, 'PLN')
+   console.log("---wynik---");
+   console.log(' ',wynik, 'PLN');
+   
+   var kapitalKoncowyParagraf = document.querySelectorAll("p > span")[0];
+      //   var odsetkiParagraf = document.querySelectorAll("p > span")[1];
+      //   var odsetki = document.querySelectorAll("p > span")[3];
+
+   kapitalKoncowyParagraf.innerHTML = wynik;
+      //odsetkiParagraf.innerHTML = (wynik - wplata).toFixed(2) ;
  }
 
-function obliczZysk(wplata, iloscLat, okresKapitalizacji, oprocentowanie, podatek){
+function obliczZysk(wplata, iloscLat, okresKapitalizacji, oprocentowanie, podatek) {
+   var Ko = parseFloat(wplata);                      // kapital poczatkowy
+   var n = iloscLat*okresKapitalizacji; // okresow kapit.
+   var base = (1+oprocentowanie);      //  podstawa potegi
+   var exp = Math.pow(base, n);
+   var ans = Ko*exp;
    
-   var wplata = wplata;
+   if(podatek == true) { 
+      var answer = (ans-wplata)*0.81;
+      answer += Ko;
+      return answer.toFixed(2);
+   }   
    
-   for(var i=0; i<okresKapitalizacji; i++){
-      
-      var odsetki = wplata*1/okresKapitalizacji*iloscLat*oprocentowanie
-      wplata += odsetki;
-      
-      }
-   
-   return odsetki;
+   return ans.toFixed(2);
 }
 
-document.getElementById("przelicz").addEventListener('click',  function(e){
+
+
+
+document.getElementById("przelicz").addEventListener('click', function(e){
    //e.preventDefault();
    oblicz();
 } );

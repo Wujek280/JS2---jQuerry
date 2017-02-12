@@ -10,7 +10,12 @@ a{color: yellow;}
 
 p:after{
    line-height: 2em;
-   content: "0 PLN";
+   content: " PLN";
+}
+p > span {
+   font-weight: bold;
+   letter-spacing: 2px;
+   color: yellow;
 }
 
 input {
