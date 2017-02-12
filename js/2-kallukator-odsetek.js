@@ -44,12 +44,12 @@ function obliczZysk(wplata, iloscLat, okresKapitalizacji, oprocentowanie, podate
    var ans = Ko*exp;
    
    if(podatek == true) { 
-      var answer = (ans-wplata)*0.81;
-      answer += Ko;
-      return answer.toFixed(2);
-   }   
-   
-   return ans.toFixed(2);
+         var answer = (ans-wplata)*0.81;
+         answer += Ko;
+         return answer.toFixed(2);
+      }else{
+         return ans.toFixed(2);
+      }  
 }
 
 
